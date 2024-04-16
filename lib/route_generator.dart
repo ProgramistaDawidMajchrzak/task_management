@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:task_management_go_online/screens/add_task.dart';
 import 'package:task_management_go_online/screens/home.dart';
+import 'package:task_management_go_online/screens/task_view.dart';
 import 'package:task_management_go_online/screens/tasks.dart';
 
 class RouteGenerator {
@@ -24,6 +25,18 @@ class RouteGenerator {
       case '/add-task':
         return PageTransition(
           child: const AddTaskWidget(),
+          type: PageTransitionType.fade,
+          settings: settings,
+        );
+      case '/task_view':
+        return PageTransition(
+          child: TaskViewWidget(task: args[0]),
+          type: PageTransitionType.fade,
+          settings: settings,
+        );
+      case '/edit-task':
+        return PageTransition(
+          child: AddTaskWidget(task: args[0]),
           type: PageTransitionType.fade,
           settings: settings,
         );

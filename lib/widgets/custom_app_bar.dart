@@ -4,17 +4,17 @@ import 'package:task_management_go_online/widgets/style.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool backOption;
+  final Widget? rightIcon;
 
   const CustomAppBar({
     Key? key,
     required this.title,
     required this.backOption,
+    this.rightIcon,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
     Widget? leadingWidget = backOption
         ? Container(
             width: 30,
@@ -38,11 +38,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
     return AppBar(
       backgroundColor: Colors.white,
+      actions: [if (rightIcon != null) rightIcon!],
       title: Text(
         title,
         style: poppinsBlack.copyWith(
           color: Colors.black,
-          fontSize: screenWidth > 360 ? 19 : 13,
+          fontSize: 17,
         ),
       ),
       centerTitle: true,

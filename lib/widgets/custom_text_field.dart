@@ -7,12 +7,12 @@ class CustomTextField extends StatelessWidget {
   final bool isMultiline;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.hintText,
     this.isError = false,
     this.isMultiline = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

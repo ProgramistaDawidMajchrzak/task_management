@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'package:task_management_go_online/database/task_management_db.dart';
+import 'package:task_management_go_online/services/task_management_db.dart';
 
 class DatabaseService {
   Database? _database;
